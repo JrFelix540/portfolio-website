@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react'
 
+import { FooterWrapper, FooterText } from './footer.styles'
+
 const Footer: React.FC = () => {
     return (
         <Fragment>
-            <h1>Footer</h1>
+            <FooterWrapper>
+                <FooterText>&copy;2020 Junior Felix</FooterText>
+            </FooterWrapper>
         </Fragment>
     )
 }
