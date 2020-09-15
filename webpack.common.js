@@ -1,7 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+
+module.exports = {
   // webpack will take the files from ./src/index
   entry: './src/index',
 
@@ -43,13 +45,10 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    historyApiFallback: true,
-    hot: true
-  },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: path.resolve(__dirname, 'src', 'index.html')
     }),
 ]
 };
